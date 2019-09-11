@@ -2,17 +2,25 @@
 
 int main(){
 	
-	//espaço para o numero do comando
+	//espaÃ§o para o numero do comando
 	char comando;
+	
+	//Variaveis do comando 1
+	int PI;
+	
+	//Variaveis do comando 2
+	int a;
+	int b;
+	int potencia = 1;
 	
 	do
 	{
 		//Parte visual do menu
 		printf("Digiteo numero do comando");
 		printf("\n1-Ver numero  par ou impar");
-		printf("\n2-");
+		printf("\n2-Potencia do numero");
 		printf("\n3-");
-		printf("\n4-");
+		printf("\n4-Informar ano bissexto");
 		printf("\n5-");
 		printf("\n6-");
 		printf("\n7-");
@@ -33,10 +41,9 @@ int main(){
 				printf("Adeus, obrigado por usar esse menu\n\n\n\n");
 				
 				break;
-			//Ver se um numero é par ou impar
+			//Ver se um numero Ã© par ou impar
 			case 1:
 				
-				int PI;
 				
 				printf("\n\nDigite um numero inteiro:  ");
 				scanf("%d", &PI);
@@ -51,6 +58,18 @@ int main(){
 				
 				break;
 			case 2:
+				
+				
+				printf("\n\nDigite um numero:  ");
+				scanf("%d", &a);
+				
+				printf("\nDigite a potencia do numero:  ");
+				scanf("%d", &b);
+				
+				for(int i=0; i < b; i++){
+					potencia *= a;
+				}
+				printf("\nO resultado da potencia tem um valor de: %d\n\n", potencia);
 				
 				break;
 			case 3:
@@ -82,6 +101,6 @@ int main(){
 				printf("\n\nDigite um numero de comando valido\n\n");
 				break;
 		}
-	//Repetir menu até ser digitado o comando 0	
+	//Repetir menu atÃ© ser digitado o comando 0	
 	}while(comando < 0 || comando > 0);
 }
