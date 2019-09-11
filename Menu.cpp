@@ -5,17 +5,6 @@ int main(){
 	//espaço para o numero do comando
 	char comando;
 	
-	//Variaveis do comando 1
-	int PI;
-	
-	//Variaveis do comando 2
-	int a;
-	int b;
-	int potencia = 1;
-	
-	//Variaveis do comando 4
-	int ano;
-	
 	do
 	{
 		//Parte visual do menu
@@ -45,8 +34,8 @@ int main(){
 				
 				break;
 			//Ver se um numero é par ou impar
-			case 1:
-				
+			case 1:{
+				int PI;
 				
 				printf("\n\nDigite um numero inteiro:  ");
 				scanf("%d", &PI);
@@ -59,9 +48,11 @@ int main(){
 					printf(PI + "\nNumero Impar\n\n");
 				}
 				
-				break;
-			case 2:
-				
+				break;}
+			case 2:{
+				int a;
+				int b;
+				int potencia = 1;
 				
 				printf("\n\nDigite um numero inteiro:  ");
 				scanf("%d", &a);
@@ -74,21 +65,23 @@ int main(){
 				}
 				printf("\nO resultado da potencia tem um valor de: %d\n\n", potencia);
 				
-				break;
+				break;}
 			case 3:
 				
 				break;
-			case 4:
-				printf("\n\nDigite o ano:  ");
-				scanf("%d", ano);
+			case 4:{
+				int ano;
 				
-				if(ano %2 == 0){
+				printf("\n\nDigite o ano:  ");
+				scanf("%d", &ano);
+				
+				if(ano %4 == 0){
 					printf("\n%d tem um dia extra, sendo ano bissexto\n\n", ano);
 				}
 				else{
 					printf("\n%d possui nenhum dia extra, por não ser bissexto\n\n", ano);
 				}
-				break;
+				break;}
 			case 5:
 				
 				break;
@@ -113,5 +106,5 @@ int main(){
 				break;
 		}
 	//Repetir menu até ser digitado o comando 0	
-	}while(comando < 0 || comando > 0);
+	}while(comando != 0);
 }
