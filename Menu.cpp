@@ -13,10 +13,13 @@ int main(){
 	int b;
 	int potencia = 1;
 	
+	//Variaveis do comando 4
+	int ano;
+	
 	do
 	{
 		//Parte visual do menu
-		printf("Digiteo numero do comando");
+		printf("Digiteo o numero do comando");
 		printf("\n1-Ver numero  par ou impar");
 		printf("\n2-Potencia do numero");
 		printf("\n3-");
@@ -60,7 +63,7 @@ int main(){
 			case 2:
 				
 				
-				printf("\n\nDigite um numero:  ");
+				printf("\n\nDigite um numero inteiro:  ");
 				scanf("%d", &a);
 				
 				printf("\nDigite a potencia do numero:  ");
@@ -76,7 +79,15 @@ int main(){
 				
 				break;
 			case 4:
+				printf("\n\nDigite o ano:  ");
+				scanf("%d", ano);
 				
+				if(ano %2 == 0){
+					printf("\n%d tem um dia extra, sendo ano bissexto\n\n", ano);
+				}
+				else{
+					printf("\n%d possui nenhum dia extra, por não ser bissexto\n\n", ano);
+				}
 				break;
 			case 5:
 				
