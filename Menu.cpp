@@ -37,7 +37,7 @@ int main(){
 			case 1:{
 				int PI;
 				
-				printf("\n\nDigite um numero inteiro:  ");
+				printf("\n\nDigite um numero inteiro para descobrir se é par ou impar:  ");
 				scanf("%d", &PI);
 				
 				if(PI %2 == 0){
@@ -49,30 +49,32 @@ int main(){
 				}
 				
 				break;}
+				//Calcular a potencia
 			case 2:{
-				int a;
+				float a;
 				int b;
-				int potencia = 1;
+				float potencia = 1;
 				
-				printf("\n\nDigite um numero inteiro:  ");
-				scanf("%d", &a);
+				printf("\n\nDigite um numero para calcular sua potencia:  ");
+				scanf("%f", &a);
 				
-				printf("\nDigite a potencia do numero:  ");
+				printf("\nDigite a potencia inteira do numero:  ");
 				scanf("%d", &b);
 				
 				for(int i=0; i < b; i++){
 					potencia *= a;
 				}
-				printf("\nO resultado da potencia tem um valor de: %d\n\n", potencia);
+				printf("\nO resultado da potencia tem um valor de: %f\n\n", potencia);
 				
 				break;}
 			case 3:
 				
 				break;
+				//Verificar se é bissexto
 			case 4:{
 				int ano;
 				
-				printf("\n\nDigite o ano:  ");
+				printf("\n\nDigite o ano para verificar se é bissexto:  ");
 				scanf("%d", &ano);
 				
 				if(ano %4 == 0){
