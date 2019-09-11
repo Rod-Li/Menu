@@ -41,11 +41,11 @@ int main(){
 				scanf("%d", &PI);
 				
 				if(PI %2 == 0){
-					printf(PI + "\nNumero Par\n\n");
+					printf("\n%d Numero Par\n\n", PI);
 				}
 				
 				else{
-					printf(PI + "\nNumero Impar\n\n");
+					printf("\n%d Numero Impar\n\n", PI);
 				}
 				
 				break;}
