@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 int main(){
 	
@@ -11,7 +12,7 @@ int main(){
 		printf("Digiteo o numero do comando");
 		printf("\n1-Ver numero  par ou impar");
 		printf("\n2-Potencia do numero");
-		printf("\n3-");
+		printf("\n3-Raiz do numero");
 		printf("\n4-Informar ano bissexto");
 		printf("\n5-");
 		printf("\n6-");
@@ -67,9 +68,22 @@ int main(){
 				printf("\nO resultado da potencia tem um valor de: %f\n\n", potencia);
 				
 				break;}
-			case 3:
+				//Tirar raiz
+			case 3:{
+				float x;
+				float y;
+				float raiz;
 				
-				break;
+				printf("Digite um numero para se tirar a raiz:  ");
+				scanf("%f", &x);
+				
+				printf("Digite o numero que vai ser o indice:  ");
+				scanf("%f", &y);
+				
+				raiz = pow(x,1.0/y);
+				
+				printf("Raiz do numero:  %f\n\n", raiz); 
+				break;}
 				//Verificar se é bissexto
 			case 4:{
 				int ano;
