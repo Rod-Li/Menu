@@ -17,7 +17,7 @@ int main(){
 		printf("\n5-Media ponderada de 3 notas");
 		printf("\n6-Media e verificacao de 2 notas");
 		printf("\n7-Calcular a fatorial de um numero");
-		printf("\n8-");
+		printf("\n8-verificar o numero sendo primo ou nao ");
 		printf("\n9-");
 		printf("\n10-Imprimir o nome e matricula sendo a matricula em hexadecimal");
 		printf("\n0-Sair do menu");
@@ -173,6 +173,7 @@ int main(){
 				printf("\nA fracional do numero tem um valor de: %d\n\n", fatorial);
 				
 				break;}
+				//verificar o numero sendo primo ou nao 
 			case 8:{
 				int numero;
 				int resultado;
