@@ -174,7 +174,25 @@ int main(){
 				
 				break;}
 			case 8:{
+				int numero;
+				int resultado;
+				int i;
 				
+				printf("\n\nDigite um numero para verificar o mesmo sendo primo ou nao:  ");
+				scanf("%d", &numero);
+				
+				for( i=1; i <= numero; i++){
+					
+					if(numero % i == 0){
+						resultado++;
+					}
+				}
+				if(resultado < 3){
+					printf("\nNumero: %d\nResultado: primo\n\n", numero);
+				}
+				else{
+					printf("\nNumero: %d\nResultado: nao primo\n\n", numero);
+				}
 				break;}
 			case 9:{
 				
@@ -182,15 +200,15 @@ int main(){
 				//Imprimir o nome e matricula sendo a matricula em hexadecimal
 			case 10:{
 				long int Matricula;
-				char array[100];
+				char Nome[100];
 				
 				printf("\n\nDigite seu nome:  \n");
-				scanf("%s", array);
+				scanf("%s", Nome);
 				
 				printf("Digite o numero da sua matricula: \n");
 				scanf("%d",&Matricula);
 				
-				printf("Sua matricula e nome sao %X e %s\n\n", Matricula, array);
+				printf("Sua matricula e nome sao %X e %s\n\n", Matricula, Nome);
 				
 				break;}
 			//Caso um comando invalido seja digitado
