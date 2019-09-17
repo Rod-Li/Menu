@@ -3,7 +3,7 @@
 
 int main(){
 	
-	//espaÁo para o numero do comando
+	//espa√ßo para o numero do comando
 	char comando;
 	
 	do
@@ -16,7 +16,7 @@ int main(){
 		printf("\n4-Informar ano bissexto");
 		printf("\n5-Media ponderada de 3 notas");
 		printf("\n6-Media e verificacao de 2 notas");
-		printf("\n7-");
+		printf("\n7-Calcular a fatorial de um numero");
 		printf("\n8-");
 		printf("\n9-");
 		printf("\n10-Imprimir o nome e matricula sendo a matricula em hexadecimal");
@@ -34,11 +34,11 @@ int main(){
 				printf("Adeus, obrigado por usar esse menu\n\n\n\n");
 				
 				break;
-			//Ver se um numero È par ou impar
+			//Ver se um numero √© par ou impar
 			case 1:{
 				int PI;
 				
-				printf("\n\nDigite um numero inteiro para descobrir se È par ou impar:  ");
+				printf("\n\nDigite um numero inteiro para descobrir se √© par ou impar:  ");
 				scanf("%d", &PI);
 				
 				if(PI %2 == 0){
@@ -85,18 +85,18 @@ int main(){
 				
 				printf("Raiz do numero:  %f\n\n", raiz); 
 				break;}
-				//Verificar se È bissexto
+				//Verificar se √© bissexto
 			case 4:{
 				int ano;
 				
-				printf("\n\nDigite o ano para verificar se È bissexto:  ");
+				printf("\n\nDigite o ano para verificar se √© bissexto:  ");
 				scanf("%d", &ano);
 				
 				if(ano %4 == 0){
 					printf("\n%d tem um dia extra, sendo ano bissexto\n\n", ano);
 				}
 				else{
-					printf("\n%d possui nenhum dia extra, por n„o ser bissexto\n\n", ano);
+					printf("\n%d possui nenhum dia extra, por n√£o ser bissexto\n\n", ano);
 				}
 				break;}
 				//Media ponderada de 3 notas
@@ -153,6 +153,7 @@ int main(){
 					}
 				}
 				break;}
+				//Calcular a fatorial
 			case 7:{
 				int numero;
 				int fatorial = 1;
@@ -164,10 +165,10 @@ int main(){
 				
 				int limite = numero;
 				
-				for( i=0; i < limite; i++){
+				for( i=1; i < limite; i++){
 					
 					menos = i - 1;
-					fatorial *= numero - menos;
+					fatorial *= (numero - menos);
 				}
 				printf("\nA fracional do numero tem um valor de: %d\n\n", fatorial);
 				
@@ -197,6 +198,6 @@ int main(){
 				printf("\n\nDigite um numero de comando valido\n\n");
 				break;
 		}
-	//Repetir menu atÈ ser digitado o comando 0	
+	//Repetir menu at√© ser digitado o comando 0	
 	}while(comando != 0);
 }
