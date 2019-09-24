@@ -4,7 +4,7 @@
 int main(){
 	
 	//espaço para o numero do comando
-	char comando;
+	int comando;
 	
 	do
 	{
@@ -20,12 +20,13 @@ int main(){
 		printf("\n8-verificar o numero sendo primo ou nao ");
 		printf("\n9-");
 		printf("\n10-Imprimir o nome e matricula sendo a matricula em hexadecimal");
-		printf("\n11-Imprimir e comparar duas metades de um texto");
+		printf("\n11-verificar a quantia de caracteres e vogais de um texto");
 		printf("\n0-Sair do menu");
 		printf("\nComando:  ");
 		
 		//Para digitar o comando
 		scanf("%d",&comando);
+		fflush(stdin);
 		
 		//Comandos do menu
 		switch(comando){
@@ -213,23 +214,19 @@ int main(){
 				printf("\nSua matricula e nome sao %X e %s\n\n", Matricula, Nome);
 				
 				break;}
-				//Imprimir e comparar duas metades de um texto
+				//Imprimir e comparar dois textos
 			case 11:{
 				char texto1[100];
 				char texto2[100];
-				char textoC[200];
-				int contadorC=0;
 				int i;
 				int contadorV1 = 0;
 				int contadorV2 = 0;
 				int carac1;
 				int carac2;
 	
-				printf("Digite uma metade de texto para compara:  ");
+				printf("Digite um texto para verificar a quantia de caracteres e vogais:  ");
 				gets(texto1);
-	
-				printf("\nDigite outra metade de texto para compara:  ");
-				gets(texto2);	
+				fflush(stdin);
 	
 				for(i = 0; texto1[i] != '\0' && i < sizeof(texto1); i++){
 					if( texto1[i] == 'a' || texto1[i] == 'A' ||
@@ -242,42 +239,8 @@ int main(){
 				}
 				carac1 = i ;
 				printf("\nNumero de caracteres no primeiro texto: %d", carac1);
-				printf("\nNumero de vogais no primeiro texto: %d", contadorV1);
-	
-				for(i = 0; texto2[i] != '\0' && i < sizeof(texto2); i++){
-					if( texto2[i] == 'a' || texto2[i] == 'A' ||
-						texto2[i] == 'e' || texto2[i] == 'E' ||
-						texto2[i] == 'i' || texto2[i] == 'I' ||
-						texto2[i] == 'o' || texto2[i] == 'O' ||
-						texto2[i] == 'u' || texto2[i] == 'U'){
-							contadorV2 += 1;
-						}
-				}
-				carac2 = i ;
-				printf("\n\nNumero de caracteres no segundo texto: %d", carac2);
-				printf("\nNumero de vogais no segundo texto: %d", contadorV2);
-	
-				if( carac1 != carac2 || contadorV1 != contadorV2){
-					printf("\n\nOs dois textos sao diferentes\n\n");
-				}
-				else{
-					printf("\n\nOs dois textos sao iguais\n\n");
-				}
-
-				for(i = 0; texto1[i] != '\0' && i < sizeof(texto1); i++){
-					textoC[i] = texto1[i];
-		
-					contadorC = contadorC + 1;
-				}
-				textoC[i] = ' ';
-	
-				for(i = 0; texto2[i] != '\0' && i < sizeof(texto1); i++){
-					contadorC++;
-					textoC[contadorC] = texto2[i];
-				}
-				textoC[contadorC] = '\0';
-	
-				printf("\n\nTexto completo:\n%s\n\n", textoC);
+				printf("\nNumero de vogais no primeiro texto: %d\n\n", contadorV1);
+				
 				break;}
 			//Caso um comando invalido seja digitado
 			default:
