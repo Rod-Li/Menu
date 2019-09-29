@@ -18,9 +18,11 @@ int main(){
 		printf("\n6-Media e verificacao de 2 notas");
 		printf("\n7-Calcular a fatorial de um numero");
 		printf("\n8-verificar o numero sendo primo ou nao ");
-		printf("\n9-");
+		printf("\n9-Sendo feito, nao abrir");
 		printf("\n10-Imprimir o nome e matricula sendo a matricula em hexadecimal");
-		printf("\n11-verificar a quantia de caracteres e vogais de um texto");
+		printf("\n11-Verificar a quantia de caracteres e vogais de um texto");
+		printf("\n12-Recebe um texto e o copia pra outra variavel");
+		printf("\n13-Concatenar dois textos digitados");
 		printf("\n0-Sair do menu");
 		printf("\nComando:  ");
 		
@@ -198,7 +200,7 @@ int main(){
 				}
 				break;}
 			case 9:{
-				
+				printf("\n\nDesculpe, mas esse comando esta indisponivel no momento\n\n");
 				break;}
 				//Imprimir o nome e matricula sendo a matricula em hexadecimal
 			case 10:{
@@ -217,12 +219,9 @@ int main(){
 				//Imprimir e comparar dois textos
 			case 11:{
 				char texto1[100];
-				char texto2[100];
 				int i;
 				int contadorV1 = 0;
-				int contadorV2 = 0;
 				int carac1;
-				int carac2;
 	
 				printf("Digite um texto para verificar a quantia de caracteres e vogais:  ");
 				gets(texto1);
@@ -241,6 +240,34 @@ int main(){
 				printf("\nNumero de caracteres no primeiro texto: %d", carac1);
 				printf("\nNumero de vogais no primeiro texto: %d\n\n", contadorV1);
 				
+				break;}
+				//recebe um texto e o copia pra outra variavel
+			case 12:{
+				int i;
+				char texto1[100];
+				char textoC[100];
+				
+				printf("\n\nDigite um texto para ser trasnferido para outra variavel:  ");
+				gets(texto1);
+				
+				for(i=0; texto1[i] != '\0' || i != sizeof(texto1);i++){
+					textoC[i] = texto1[i];
+				}
+				printf("\nTexto digitado e transferido para outra variavel:\n%s \n\n", textoC);
+				break;}
+				//concatenar dois textos
+			case 13:{
+				int i;
+				char texto1[100];
+				char texto2[100];
+				
+				printf("\n\nDigite um texto para se concatenar com o proximo:  ");
+				gets(texto1);
+				
+				printf("\n\nDigite outro texto para se concatenar com o anterior:  ");
+				gets(texto2);
+				
+				printf("Os dois textos juntos ficam:\n%s%s\n\n",texto1,texto2);
 				break;}
 			//Caso um comando invalido seja digitado
 			default:
