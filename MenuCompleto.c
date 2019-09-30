@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<math.h>
+#include<locale.h>
+#include<stdlib.h>
 
 int main(){
 	
@@ -18,11 +20,12 @@ int main(){
 		printf("\n6-Media e verificacao de 2 notas");
 		printf("\n7-Calcular a fatorial de um numero");
 		printf("\n8-verificar o numero sendo primo ou nao ");
-		printf("\n9-Sendo feito, nao abrir");
+		printf("\n9-imprimir a sequencia de fibo ate um numero");
 		printf("\n10-Imprimir o nome e matricula sendo a matricula em hexadecimal");
 		printf("\n11-Verificar a quantia de caracteres e vogais de um texto");
 		printf("\n12-Recebe um texto e o copia pra outra variavel");
 		printf("\n13-Concatenar dois textos digitados");
+		printf("\n14-Compara dois textos e fala se sao diferentes ou iguais");
 		printf("\n0-Sair do menu");
 		printf("\nComando:  ");
 		
@@ -199,8 +202,29 @@ int main(){
 					printf("\nNumero: %d\nResultado: nao primo\n\n", numero);
 				}
 				break;}
+				//imprimir a sequencia de fibo ate um numero
 			case 9:{
-				printf("\n\nDesculpe, mas esse comando esta indisponivel no momento\n\n");
+				int numero;
+				int i;
+				int fi1=1;
+				int fi2=1;
+				int soma;
+				
+				printf("\n\nDigite um numero para imprimir a sequencia de fibo ate ele: ");
+				scanf("%d", &numero);
+				
+				for(i=1; i<=numero; i++){
+					if(i == 1|| i == 2){
+						printf("%d \n", fi1 );
+					}
+					else{
+						soma=fi1+fi2;
+						fi1=fi2;
+						fi2=soma;
+						printf("%d \n", soma);
+					}
+				}
+				printf("\n\n");
 				break;}
 				//Imprimir o nome e matricula sendo a matricula em hexadecimal
 			case 10:{
@@ -268,6 +292,30 @@ int main(){
 				gets(texto2);
 				
 				printf("Os dois textos juntos ficam:\n%s%s\n\n",texto1,texto2);
+				break;}
+				//Compara dois textos e fala se sao diferentes ou iguais
+			case 14:{
+				int i, f=0;
+				char texto1[100];
+				char texto2[100];
+				
+				printf("Digite um texto para ser comparado com o texto seguinte:  \n");
+				gets(texto1);
+				
+				printf("\n\nDigite um texto para ser comparado com o texto anterior:  \n");
+				gets(texto2);
+				
+				for(i=0;texto1[i] != '\0' && i< sizeof(texto1);i++){
+					if(texto1[i] != texto2[i]){
+						f++;
+					}
+				}
+				if(f ==0){
+					printf("\n\nO textos sao iguais\n\n");
+				}
+				else{
+					printf("\n\nO textos sao diferentes\n\n");
+				}
 				break;}
 			//Caso um comando invalido seja digitado
 			default:
