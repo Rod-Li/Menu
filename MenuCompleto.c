@@ -306,7 +306,7 @@ int main(){
 				printf("\n\nDigite um texto para ser comparado com o texto anterior:  \n");
 				gets(texto2);
 				
-				for(i=0;texto1[i] != '\0';i++){
+				for(i=0;texto1[i] != '\0' && texto2[i] != '\0' || i < sizeof(texto1);i++){
 					if(texto1[i] != texto2[i]){
 						f++;
 						break;
