@@ -295,6 +295,7 @@ int main(){
 				break;}
 				//Compara dois textos e fala se sao diferentes ou iguais
 			case 14:{
+				fflush(stdin);
 				int i, f=0;
 				char texto1[100];
 				char texto2[100];
@@ -305,9 +306,14 @@ int main(){
 				printf("\n\nDigite um texto para ser comparado com o texto anterior:  \n");
 				gets(texto2);
 				
-				for(i=0;texto1[i] != '\0' && i< sizeof(texto1);i++){
+				for(i=0;texto1[i] != '\0';i++){
 					if(texto1[i] != texto2[i]){
 						f++;
+						break;
+					}
+					if(sizeof(texto1) != sizeof(texto2)){
+						f++;
+						break;
 					}
 				}
 				if(f ==0){
