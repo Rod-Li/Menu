@@ -249,7 +249,6 @@ int main(){
 	
 				printf("Digite um texto para verificar a quantia de caracteres e vogais:  ");
 				gets(texto1);
-				fflush(stdin);
 	
 				for(i = 0; texto1[i] != '\0' && i < sizeof(texto1); i++){
 					if( texto1[i] == 'a' || texto1[i] == 'A' ||
@@ -305,17 +304,17 @@ int main(){
 				
 				printf("\n\nDigite um texto para ser comparado com o texto anterior:  \n");
 				gets(texto2);
-				
-				for(i=0;texto1[i] != '\0' && texto2[i] != '\0' || i < sizeof(texto1);i++){
+
+				for(i=0;texto1[i] != '\0' && texto2[i] != '\0' && i < sizeof(texto1);i++){
 					if(texto1[i] != texto2[i]){
 						f++;
 						break;
 					}
-					if(sizeof(texto1) != sizeof(texto2)){
-						f++;
-						break;
-					}
 				}
+				if(texto1[i] != texto2[i]){
+					f++;
+				}
+				
 				if(f ==0){
 					printf("\n\nO textos sao iguais\n\n");
 				}
